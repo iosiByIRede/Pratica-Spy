@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "1B7AEA42-C92D-421F-B526-65806ADA867B",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:TestesExemplo.xcodeproj",
+        "identifier" : "0B7358CE2C480D8C00A8651A",
+        "name" : "TestesExemploTests"
+      }
+    }
+  ],
+  "version" : 1
+}
