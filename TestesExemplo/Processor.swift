@@ -21,8 +21,8 @@ class Processor {
         self.isActive = true
     }
     
-    func loadContent() {
-        self.content = worker.readData()
+    func loadContent() async {
+        self.content = await worker.readData()
     }
     
     func saveContent() {

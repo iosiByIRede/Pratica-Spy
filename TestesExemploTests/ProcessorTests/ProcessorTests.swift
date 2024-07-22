@@ -30,12 +30,12 @@ final class ProcessorTests: XCTestCase {
         XCTAssertTrue(sut.isActive)
     }
     
-    func test_processor_loadContent() {
+    func test_processor_loadContent() async {
         //given
         let expected = [0, 0, 0]
         
         // when
-        sut.loadContent()
+        await sut.loadContent()
         let actual = sut.content
         
         // then
