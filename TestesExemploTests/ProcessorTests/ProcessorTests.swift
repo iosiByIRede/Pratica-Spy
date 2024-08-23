@@ -30,12 +30,12 @@ final class ProcessorTests: XCTestCase {
         XCTAssertTrue(sut.isActive)
     }
     
-    func test_processor_loadContent() async {
+    func test_processor_loadContent() {
         //given
         let expected = [0, 0, 0]
         
         // when
-        await sut.loadContent()
+        sut.loadContent()
         let actual = sut.content
         
         // then
@@ -47,6 +47,18 @@ final class ProcessorTests: XCTestCase {
         sut.saveContent()
         
         XCTAssertTrue(spy.didAskToWriteData)
+    }
+    
+    func test_processor_run_escapingCompletion() {
+        let expectation = XCTestExpectation(description: "Escaping Expectation")
+        var running = false
+        sut.run() {
+            running = true
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 2)
+        XCTAssertTrue(running)
     }
 
 }

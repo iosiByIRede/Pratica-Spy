@@ -8,12 +8,12 @@
 import Foundation
 
 protocol ProcessorWorkerScheme {
-    func readData() async -> [Int]
+    func readData() -> [Int]
     func writeData(_ data: [Int])
 }
 
 class ProcessorWorker: ProcessorWorkerScheme {
-    func readData() async -> [Int] {
+    func readData() -> [Int] {
         return [0, 1, 2]
     }
     

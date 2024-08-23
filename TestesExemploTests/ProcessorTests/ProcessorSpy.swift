@@ -11,7 +11,7 @@ import Foundation
 class ProcessorSpy: ProcessorWorkerScheme {
     private(set) var didAskToWriteData: Bool = false
     
-    func readData() async -> [Int] {
+    func readData() -> [Int] {
         return [0, 0, 0]
     }
     

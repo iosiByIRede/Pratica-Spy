@@ -21,11 +21,16 @@ class Processor {
         self.isActive = true
     }
     
-    func loadContent() async {
-        self.content = await worker.readData()
+    func loadContent() {
+        self.content = worker.readData()
     }
     
     func saveContent() {
         worker.writeData([])
+    }
+    
+    func run(_ completion: @escaping () -> Void) {
+        // alguma computação...
+        completion()
     }
 }
